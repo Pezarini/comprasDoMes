@@ -1,13 +1,29 @@
 <template>
-  <div id="app">
-    <h1>Lista de Compras</h1>
-  </div>
+	<div id="app">
+		<div class="header">
+			<h1>Lista de Compras</h1>
+		</div>
+
+		<div class="formInput">
+			<FormInput @addProduct="products = $event"/>
+		</div>
+
+	</div>
 </template>
 
 <script>
+import FormInput from './components/FormInput.vue'
 
 export default {
   name: 'App',
+  data() {
+	return {
+		products: []
+	}
+  },
+  components: {
+    FormInput
+  }
 }
 </script>
 

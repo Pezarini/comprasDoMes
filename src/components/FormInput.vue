@@ -13,7 +13,8 @@ export default {
   data() {
 	return {
 		product: '',
-		quantity: 0
+		quantity: '',
+		list: []
 	}
   },
   methods: {
@@ -22,7 +23,12 @@ export default {
 			return;
 		}
 
-		this.$emit('addProduct', {product: this.product, quantity: this.quantity});
+		this.list.push({product: this.product, quantity: this.quantity});
+
+		this.$emit('addProduct', this.list);
+
+		this.product = '';
+		this.quantity = '';
 	}
   }
 }

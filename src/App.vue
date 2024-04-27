@@ -7,22 +7,27 @@
 		<div class="formInput">
 			<FormInput @addProduct="products = $event"/>
 		</div>
+		<div class="listProduct">
+			<ListProduct :products="products"/>
+		</div>
 
 	</div>
 </template>
 
 <script>
 import FormInput from './components/FormInput.vue'
+import ListProduct from './components/ListProduct.vue'
 
 export default {
   name: 'App',
   data() {
 	return {
-		products: []
+		products: ''
 	}
   },
   components: {
-    FormInput
+    FormInput,
+	ListProduct
   }
 }
 </script>
